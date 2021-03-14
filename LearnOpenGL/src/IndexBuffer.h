@@ -4,6 +4,7 @@
 class IndexBuffer
 {
 public:
+	IndexBuffer() = default;
 	IndexBuffer(unsigned int indices[], unsigned int count);
 	~IndexBuffer();
 	void Bind();

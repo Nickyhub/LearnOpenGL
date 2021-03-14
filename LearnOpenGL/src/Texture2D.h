@@ -4,6 +4,7 @@
 class Texture2D
 {
 public:
+	Texture2D() = default;
 	Texture2D(const char* filepath, unsigned int format);
 	~Texture2D();
 

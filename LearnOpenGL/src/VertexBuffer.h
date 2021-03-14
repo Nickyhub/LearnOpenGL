@@ -4,6 +4,7 @@
 class VertexBuffer
 {
 public:
+	VertexBuffer() = default;
 	VertexBuffer(float data[], unsigned int size);
 	~VertexBuffer();
 	void Bind();

@@ -27,7 +27,7 @@ Texture2D::Texture2D(const char* filepath, unsigned int format)
 
 Texture2D::~Texture2D()
 {
-
+	glDeleteTextures(1, &m_ID);
 }
 
 void Texture2D::Bind()

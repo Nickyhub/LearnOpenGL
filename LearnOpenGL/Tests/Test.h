@@ -2,7 +2,7 @@
 
 #include "Core.h"
 #include "GL/glew.h"
-#include "imgui/imgui.h"
+#include "GLFW/glfw3.h"
 class Test
 {
 public:
@@ -10,12 +10,8 @@ public:
 	
 	virtual void OnUpdate(float deltaTime) {}
 	virtual void OnRender() {}
-	virtual void OnImGuiRender() {		
-		ImGui::ColorEdit4("Clear Color", m_Color);
-	}
+	virtual void OnImGuiRender() {}
 
 	virtual const char* GetName() { return "asdf"; }
-protected:
-	float m_Color[4] = {};
 };
 

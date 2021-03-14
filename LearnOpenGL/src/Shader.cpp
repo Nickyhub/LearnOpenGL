@@ -8,6 +8,11 @@ Shader::Shader(const char* vsfs, const char* fsfs){
 	GL_CALL(glUseProgram(m_ShaderID));
 }
 
+Shader::~Shader()
+{
+	glDeleteProgram(m_ShaderID);
+}
+
 void Shader::Bind()
 {
 	GL_CALL(glUseProgram(m_ShaderID));

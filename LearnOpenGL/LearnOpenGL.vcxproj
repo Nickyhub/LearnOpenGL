@@ -93,9 +93,7 @@
     <ClCompile Include="src\Texture2D.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
-    <ClCompile Include="src\VertexBufferLayout.cpp" />
     <ClCompile Include="Tests\TestClearColor.cpp" />
-    <ClCompile Include="Tests\TestMenu.cpp" />
     <ClCompile Include="Tests\TextureTest.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
@@ -110,6 +108,7 @@
     <None Include="res\shaders\shader.vs" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Tests\ImGuiMenu.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Core.h" />
     <ClInclude Include="src\Shader.h" />
@@ -119,7 +118,6 @@
     <ClInclude Include="src\VertexBufferLayout.h" />
     <ClInclude Include="Tests\TestClearColor.h" />
     <ClInclude Include="Tests\Test.h" />
-    <ClInclude Include="Tests\TestMenu.h" />
     <ClInclude Include="Tests\TextureTest.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />

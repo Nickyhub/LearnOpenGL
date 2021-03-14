@@ -11,8 +11,9 @@
 class Shader
 {
 public:
+	Shader() = default;
 	Shader(const char* vsfs, const char* fsfs);
-	~Shader() = default;
+	~Shader();
 	void Bind();
 	void Unbind();
 	unsigned int CreateShaderProgram(std::string vsfs, std::string fsfs);
