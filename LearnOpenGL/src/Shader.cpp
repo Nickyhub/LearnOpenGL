@@ -84,8 +84,20 @@ void Shader::setUniform4f(const char* name, float v0, float v1, float v2, float 
 	GL_CALL(glUniform4f(uniform_location, v0, v1, v2, v3));
 }
 
+void Shader::setUniform2f(const char* name, float v0, float v1)
+{
+	int uniform_location = glGetUniformLocation(m_ShaderID, name);
+	GL_CALL(glUniform2f(uniform_location, v0, v1));
+}
+
 void Shader::setUniformMat4f(const char* name, const glm::mat4 mvp)
 {
 	int uniform_location = glGetUniformLocation(m_ShaderID, name);
 	GL_CALL(glUniformMatrix4fv(uniform_location, 1, GL_FALSE, &mvp[0][0]));
+}
+
+void Shader::setUniform1i(const char* name, int v0)
+{
+	int uniform_location = glGetUniformLocation(m_ShaderID, name);
+	GL_CALL(glUniform1i(uniform_location, v0));
 }

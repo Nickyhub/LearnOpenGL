@@ -22,7 +22,9 @@ public:
 	unsigned int getShaderID() { return m_ShaderID; };
 
 	void setUniform4f(const char* name, float v0, float v1, float v2, float v3);
+	void setUniform2f(const char* name, float v0, float v1);
 	void setUniformMat4f(const char* name, const glm::mat4 mvp);
+	void setUniform1i(const char* name, int v0);
 
 private:
 	unsigned int m_ShaderID;

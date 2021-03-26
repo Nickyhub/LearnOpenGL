@@ -11,6 +11,7 @@ public:
 	virtual void OnUpdate(float deltaTime) {}
 	virtual void OnRender() {}
 	virtual void OnImGuiRender() {}
+	virtual void Unbind() {}
 
 	virtual const char* GetName() { return "asdf"; }
 };

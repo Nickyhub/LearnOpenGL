@@ -5,6 +5,7 @@
 #include "imgui/imgui_impl_opengl3.h"
 #include "imgui/imgui_impl_glfw.h"
 
+#include <functional>
 #include <vector>
 
 class ImGuiMenu : public Test
@@ -38,6 +39,7 @@ public:
 			}
 			else {
 				if (ImGui::Button("<--")) {
+					m_Current->Unbind();
 					m_Current = this;
 				}
 				else {
@@ -52,7 +54,7 @@ public:
 	}
 
 	template<typename T>
-	void RegisterTest(T test) {
+	void RegisterTest() {
 		m_Tests.push_back(new T());
 	}
 

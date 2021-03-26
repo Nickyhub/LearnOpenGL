@@ -87,12 +87,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="Tests\CameraTest.cpp" />
+    <ClCompile Include="Tests\CubeTest.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Texture2D.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
+    <ClCompile Include="Tests\MatricesTest.cpp" />
     <ClCompile Include="Tests\TestClearColor.cpp" />
     <ClCompile Include="Tests\TextureTest.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
@@ -104,10 +109,18 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\shader.fs" />
-    <None Include="res\shaders\shader.vs" />
+    <None Include="res\shaders\cubeshader.fs" />
+    <None Include="res\shaders\cubeshader.vs" />
+    <None Include="res\shaders\matrices.fs" />
+    <None Include="res\shaders\matrices.vs" />
+    <None Include="res\shaders\textureshader.fs" />
+    <None Include="res\shaders\textureshader.vs" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="Tests\CameraTest.h" />
+    <ClInclude Include="Tests\CubeTest.h" />
     <ClInclude Include="Tests\ImGuiMenu.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Core.h" />
@@ -116,6 +129,7 @@
     <ClInclude Include="src\VertexBuffer.h" />
     <ClInclude Include="src\VertexArray.h" />
     <ClInclude Include="src\VertexBufferLayout.h" />
+    <ClInclude Include="Tests\MatricesTest.h" />
     <ClInclude Include="Tests\TestClearColor.h" />
     <ClInclude Include="Tests\Test.h" />
     <ClInclude Include="Tests\TextureTest.h" />
