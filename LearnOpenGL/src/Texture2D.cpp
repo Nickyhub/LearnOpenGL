@@ -1,5 +1,4 @@
 #include "Texture2D.h"
-#include <stb_image.h>
 #include <iostream>
 
 Texture2D::Texture2D(const char* filepath, unsigned int format)
