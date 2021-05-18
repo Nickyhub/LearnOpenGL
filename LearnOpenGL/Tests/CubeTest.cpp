@@ -68,7 +68,7 @@ CubeTest::CubeTest()
 	m_Proj = glm::mat4(1.0f);
 	m_View = glm::mat4(1.0f);
 	
-	m_Shader= new Shader("res/shaders/cubeshader.vs", "res/shaders/cubeshader.fs");
+	m_Shader= new Shader("res/shaders/cubeshader_vs.glsl", "res/shaders/cubeshader_fs.glsl");
 	m_Shader->Bind();
 }
 

@@ -75,14 +75,19 @@
     <ClCompile Include="src\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tests\MandelbrotTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\textureshader.fs" />
-    <None Include="res\shaders\textureshader.vs" />
-    <None Include="res\shaders\cubeshader.vs" />
-    <None Include="res\shaders\cubeshader.fs" />
-    <None Include="res\shaders\matrices.vs" />
-    <None Include="res\shaders\matrices.fs" />
+    <None Include="res\shaders\matrices_vs.glsl" />
+    <None Include="res\shaders\matrices_fs.glsl" />
+    <None Include="res\shaders\cubeshader_vs.glsl" />
+    <None Include="res\shaders\cubeshader_fs.glsl" />
+    <None Include="res\shaders\textureshader_fs.glsl" />
+    <None Include="res\shaders\textureshader_vs.glsl" />
+    <None Include="res\shaders\mandelbrotshader_vs.glsl" />
+    <None Include="res\shaders\mandelbrotshader_fs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -155,6 +160,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\C++Spieleentwickler\SDLGame\src\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\MandelbrotTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

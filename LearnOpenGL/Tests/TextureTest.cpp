@@ -27,7 +27,7 @@ TextureTest::TextureTest()
 	m_Texture1 = new Texture2D("res/assets/WoodenContainer.jpg", GL_RGB);
 	m_Texture2 = new Texture2D("res/assets/SmileyFace.png", GL_RGBA);
 
-	m_Shader = new Shader("res/shaders/textureshader.vs", "res/shaders/textureshader.fs");
+	m_Shader = new Shader("res/shaders/textureshader_vs.glsl", "res/shaders/textureshader_fs.glsl");
 	GL_CALL(glUniform1i(glGetUniformLocation(m_Shader->getShaderID(), "texture1"), 0));
 	GL_CALL(glUniform1i(glGetUniformLocation(m_Shader->getShaderID(), "texture2"), 1));
 

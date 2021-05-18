@@ -1,20 +1,25 @@
 #pragma once
-#define GLEW_STATIC
-#include "GL/glew.h"
 
+#ifndef GLEW_STATIC
+#define GLEW_STATIC
+#endif
+
+#include "GL/glew.h"
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include "Tests/ImGuiMenu.h"
 
 class Application {
 public:
-	Application();
-	~Application();
-	int Run();
-	GLFWwindow* getWindow() { return m_Window; }
+	Application() = delete;
+	~Application() = delete;
+	static bool Init();
+	static void Shutdown();
+	static int Run();
+	static GLFWwindow* GetWindow() { return m_Window; }
 
 private:
-	void RegisterTests();
-	GLFWwindow* m_Window;
-	ImGuiMenu m_Menu;
+	inline static GLFWwindow* m_Window;
+	inline static ImGuiMenu* m_Menu;
+	static void RegisterTests();
 };

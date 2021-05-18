@@ -64,7 +64,7 @@ MatricesTest::MatricesTest()
 
 	m_VAO->AddBuffer(*m_VBO, layout);
 
-	m_Shader = new Shader ("res/shaders/matrices.vs", "res/shaders/matrices.fs");
+	m_Shader = new Shader ("res/shaders/matrices_vs.glsl", "res/shaders/matrices_fs.glsl");
 }
 
 void MatricesTest::OnUpdate(float deltaTime)

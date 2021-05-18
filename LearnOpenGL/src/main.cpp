@@ -2,12 +2,11 @@
 #include <GLFW/glfw3.h>
 #include "Application.h"
 
-
 int main() 
 {
-	{
-		Application app;
-		app.Run();
+	if (Application::Init()) {
+		Application::Run();
 	}
+	Application::Shutdown();
 	return 0;
 }

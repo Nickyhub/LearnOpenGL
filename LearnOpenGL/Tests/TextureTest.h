@@ -7,7 +7,6 @@
 #include "VertexArray.h"
 #include "Texture2D.h"
 
-#include "stb_image.h"
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
 

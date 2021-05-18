@@ -1,32 +1,38 @@
 #pragma once
+#include "GL/glew.h"
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
 #include "GLFW/glfw3.h"
 
+enum class CameraDirection {
+	FORWARD,
+	BACKWARD,
+	LEFT, 
+	RIGHT
+};
+
 class Camera
 {
 public:
-	Camera();
+	static void Init();
 	
-	//temporary
-	Camera(GLFWwindow* window);
+	static void ProcessKeyboardInput(CameraDirection direction, float deltaTime);
+	static void ProcessMouseInput(GLFWwindow* window, double xpos, double ypos);
 
-	void ProcessKeyboardInput();
-	void ProcessMouseInput();
-
-	glm::mat4 GetViewMatrix() { return m_View; }
+	static glm::mat4 GetViewMatrix();
 
 private:
-	glm::vec3 m_Position;
-	glm::vec3 m_Direction;
-	glm::vec3 m_Target;
-	glm::vec3 m_Up;
-	glm::vec3 m_Right;
-	glm::mat4 m_View;
+	static glm::vec3 m_Position;
+	static glm::vec3 m_Direction;
+	static glm::vec3 m_Up;
+	static glm::vec3 m_Right;
+	static glm::mat4 m_View;
 
-	//temporary shit
-	GLFWwindow* window;
-
-	float m_Speed = 0.05f;
+	static bool m_FirstCamera;
+	static float m_LastXPos;
+	static float m_LastYPos;
+	static float m_Speed;
+	static float m_Sensitivity;
+	static float m_Yaw;
+	static float m_Pitch;
 };
-

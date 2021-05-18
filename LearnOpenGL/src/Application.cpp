@@ -6,8 +6,9 @@
 #include <Tests/CubeTest.h>
 #include <Tests/MatricesTest.h>
 #include <Tests/CameraTest.h>
+#include <Tests/MandelbrotTest.h>
 
-Application::Application()
+bool Application::Init()
 {
 	//Init stuff
 	int width = 1920;
@@ -21,34 +22,38 @@ Application::Application()
 	if (m_Window == NULL) {
 		std::cout << "Failed to create Window du schmok" << std::endl;
 		glfwTerminate();
+		return false;
 	}
 	glfwMakeContextCurrent(m_Window);
 	if (glewInit() != GLEW_OK) {
 		std::cout << "Glew was not initialized du schmok" << std::endl;
+		return false;
 	}
 	glViewport(0, 0, width, height);
 
-	m_Menu = ImGuiMenu(m_Window);
+	m_Menu = new ImGuiMenu(m_Window);
+	RegisterTests();
+	return true;
 }
 
-Application::~Application()
+void Application::Shutdown()
 {
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
 	ImGui::DestroyContext();
-
-	glfwDestroyWindow(m_Window);
+	if (m_Window) {
+		glfwDestroyWindow(m_Window);
+	}
 	glfwTerminate();
 }
 
 int Application::Run()
 {
-
 	while (!glfwWindowShouldClose(m_Window))
 	{
 		glClearColor(0.2f, 0.3f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		m_Menu.OnUpdate();
+		m_Menu->OnUpdate();
 
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
@@ -58,10 +63,10 @@ int Application::Run()
 
 void Application::RegisterTests()
 {
-	m_Menu.RegisterTest<TestClearColor>();
-	m_Menu.RegisterTest<TextureTest>();
-	m_Menu.RegisterTest<CubeTest>();
-	m_Menu.RegisterTest<MatricesTest>();
-	m_Menu.RegisterTest<CameraTest>();
-}
-
+	m_Menu->RegisterTest<TestClearColor>();
+	m_Menu->RegisterTest<TextureTest>();
+	m_Menu->RegisterTest<CubeTest>();
+	m_Menu->RegisterTest<MatricesTest>();
+	m_Menu->RegisterTest<CameraTest>();
+	m_Menu->RegisterTest<MandelbrotTest>();
+} 

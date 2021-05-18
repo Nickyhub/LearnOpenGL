@@ -1,11 +1,11 @@
 #pragma once
 #include "Test.h"
+#include "Texture2D.h"
 #include "VertexBuffer.h"
 #include "VertexArray.h"
 #include "VertexBufferLayout.h"
 #include "Shader.h"
 #include "imgui/imgui.h"
-#include "Texture2D.h"
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include "Camera.h"
@@ -46,7 +46,6 @@ private:
 	Shader* m_Shader;
 	Texture2D* m_Texture1;
 	Texture2D* m_Texture2;
-	Camera* m_Camera;
 	const char* m_Name = "Camera Test";
 };
 
