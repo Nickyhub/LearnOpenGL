@@ -27,9 +27,11 @@ private:
 
 	int m_MaxIterations;
 	int m_IterationLimit;
+	float m_Boundary;
 	float m_Zoom;
 	float m_CenterX;
 	float m_CenterY;
+	bool m_Mode;
 
 	unsigned int m_Indices[6] = { 3, 1, 2, 3, 0, 1 };
 	const char* m_Name = "Mandelbrot";

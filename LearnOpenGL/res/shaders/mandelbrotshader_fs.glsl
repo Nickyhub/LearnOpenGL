@@ -10,6 +10,7 @@ uniform int MAX_ITERATIONS;
 uniform float zoom;
 uniform float center_x;
 uniform float center_y;
+uniform float boundary;
 
 int get_numeration() {
 	int iterations;
@@ -24,7 +25,7 @@ int get_numeration() {
 		zImg = 2 * zReal * zImg + cImag;
 		zReal = zRealTemp;
 
-		if(zReal * zReal + zImg * zImg >= 4) {
+		if(zReal * zReal + zImg * zImg >= boundary) {
 			break;
 		}
 		iterations++;

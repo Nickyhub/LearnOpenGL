@@ -50,7 +50,9 @@ void Application::Shutdown()
 }
 
 int Application::Run()
-{
+{	
+	std::cout << "Sizeof: " << sizeof(double) << std::endl;
+	std::cout << "Sizeoflong: " << sizeof(long double) << std::endl;
 	double currentTime = 0.0;
 	double lastTime = 0.0;
 	int frames = 0;
@@ -70,7 +72,6 @@ int Application::Run()
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
 		end = clock.now();
-
 
 		elapsed_seconds = end - start;
 		oneSecond += elapsed_seconds.count();

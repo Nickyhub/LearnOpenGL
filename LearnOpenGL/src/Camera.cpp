@@ -24,7 +24,7 @@ void Camera::Init()
 	m_Up = glm::vec3(0.0f, 1.0f, 0.0f);
 	m_Right = glm::vec3(1.0f, 0.0f, 0.0f);
 	m_View = glm::mat4(1.0f);
-	m_Speed = 0.10f;
+	m_Speed = 0.01f;
 	m_FirstCamera = true;
 	m_LastXPos = 960;
 	m_LastYPos = 540;
