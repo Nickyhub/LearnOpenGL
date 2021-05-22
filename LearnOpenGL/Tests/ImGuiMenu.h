@@ -21,7 +21,7 @@ public:
 		ImGui_ImplOpenGL3_Init((char*)glGetString(GL_NUM_SHADING_LANGUAGE_VERSIONS));
 	}
 
-	void OnUpdate() {
+	void OnUpdate(float deltaTime) {
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -43,7 +43,7 @@ public:
 					m_Current = this;
 				}
 				else {
-					m_Current->OnUpdate(0.0f);
+					m_Current->OnUpdate(deltaTime);
 					m_Current->OnRender();
 					m_Current->OnImGuiRender();
 				}

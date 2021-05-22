@@ -1,5 +1,7 @@
 #include "Application.h"
 
+#include <chrono>
+#include <thread>
 #include <Tests/TestClearColor.h>
 #include <Tests/TextureTest.h>
 #include <Tests/ImGuiMenu.h>
@@ -30,7 +32,7 @@ bool Application::Init()
 		return false;
 	}
 	glViewport(0, 0, width, height);
-
+	glfwSwapInterval(0);
 	m_Menu = new ImGuiMenu(m_Window);
 	RegisterTests();
 	return true;
@@ -49,14 +51,36 @@ void Application::Shutdown()
 
 int Application::Run()
 {
+	double currentTime = 0.0;
+	double lastTime = 0.0;
+	int frames = 0;
+	std::chrono::high_resolution_clock clock;
+
+	std::chrono::time_point<std::chrono::high_resolution_clock> start;
+	std::chrono::time_point<std::chrono::high_resolution_clock> end;
+	std::chrono::duration<double> elapsed_seconds;
+	double oneSecond = 0.0;
 	while (!glfwWindowShouldClose(m_Window))
 	{
+		start = clock.now();
 		glClearColor(0.2f, 0.3f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		m_Menu->OnUpdate();
+		m_Menu->OnUpdate(1.0f);
 
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
+		end = clock.now();
+
+
+		elapsed_seconds = end - start;
+		oneSecond += elapsed_seconds.count();
+		if (oneSecond >= 1.0) {
+			std::cout << "Elapsed time: " << elapsed_seconds.count() << " s		\n" << "Frames: " << frames << "\n";
+			oneSecond = 0;
+			frames = 0;
+		}
+
+		frames++;
 	}
 	return 0;
 }
