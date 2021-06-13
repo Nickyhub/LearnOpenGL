@@ -78,6 +78,9 @@
     <ClCompile Include="Tests\MandelbrotTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tests\LightingTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\matrices_vs.glsl" />
@@ -88,6 +91,9 @@
     <None Include="res\shaders\textureshader_vs.glsl" />
     <None Include="res\shaders\mandelbrotshader_vs.glsl" />
     <None Include="res\shaders\mandelbrotshader_fs.glsl" />
+    <None Include="res\shaders\lightingshader_vs.glsl" />
+    <None Include="res\shaders\lightingshader_fs.glsl" />
+    <None Include="res\shaders\lightingshadercube_fs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -166,6 +172,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tests\MandelbrotTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\LightingTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\Tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

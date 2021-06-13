@@ -89,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Tests\LightingTest.cpp" />
     <ClCompile Include="Tests\MandelbrotTest.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Camera.cpp" />
@@ -114,6 +115,9 @@
   <ItemGroup>
     <None Include="res\shaders\cubeshader_fs.glsl" />
     <None Include="res\shaders\cubeshader_vs.glsl" />
+    <None Include="res\shaders\lightingshadercube_fs.glsl" />
+    <None Include="res\shaders\lightingshader_fs.glsl" />
+    <None Include="res\shaders\lightingshader_vs.glsl" />
     <None Include="res\shaders\mandelbrotshader_fs.glsl" />
     <None Include="res\shaders\mandelbrotshader_vs.glsl" />
     <None Include="res\shaders\matrices_fs.glsl" />
@@ -123,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\C++Spieleentwickler\SDLGame\src\Singleton.h" />
+    <ClInclude Include="Tests\LightingTest.h" />
     <ClInclude Include="Tests\MandelbrotTest.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Camera.h" />
@@ -139,6 +144,7 @@
     <ClInclude Include="Tests\MatricesTest.h" />
     <ClInclude Include="Tests\TestClearColor.h" />
     <ClInclude Include="Tests\Test.h" />
+    <ClInclude Include="Tests\Tests.h" />
     <ClInclude Include="Tests\TextureTest.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />

@@ -55,6 +55,7 @@ unsigned int Shader::CompileShader(std::string shadersource, GLenum type)
 		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &length);
 		char* message = (char*)_malloca(length * sizeof(char));
 		glGetShaderInfoLog(shader, length, &length, message);
+		
 		std::cout << "Failed to compile" << (type == GL_VERTEX_SHADER ? " vertex" : " fragment") << " shader!" << std::endl;
 		std::cout << message << std::endl;
 		glDeleteShader(shader);
@@ -82,6 +83,12 @@ void Shader::setUniform4f(const char* name, float v0, float v1, float v2, float 
 {
 	unsigned int uniform_location = glGetUniformLocation(m_ShaderID, name);
 	GL_CALL(glUniform4f(uniform_location, v0, v1, v2, v3));
+}
+
+void Shader::setUniform3f(const char* name, float v0, float v1, float v2)
+{
+	unsigned int uniform_location = glGetUniformLocation(m_ShaderID, name);
+	GL_CALL(glUniform3f(uniform_location, v0, v1, v2));
 }
 
 void Shader::setUniform2f(const char* name, float v0, float v1)

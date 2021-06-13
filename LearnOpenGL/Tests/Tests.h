@@ -1,0 +1,9 @@
+#pragma once
+#include <Tests/TestClearColor.h>
+#include <Tests/TextureTest.h>
+#include <Tests/ImGuiMenu.h>
+#include <Tests/CubeTest.h>
+#include <Tests/MatricesTest.h>
+#include <Tests/CameraTest.h>
+#include <Tests/MandelbrotTest.h>
+#include <Tests/LightingTest.h>

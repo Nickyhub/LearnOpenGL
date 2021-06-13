@@ -1,14 +1,7 @@
 #include "Application.h"
-
+#include <Tests/Tests.h>
 #include <chrono>
-#include <thread>
-#include <Tests/TestClearColor.h>
-#include <Tests/TextureTest.h>
-#include <Tests/ImGuiMenu.h>
-#include <Tests/CubeTest.h>
-#include <Tests/MatricesTest.h>
-#include <Tests/CameraTest.h>
-#include <Tests/MandelbrotTest.h>
+
 
 bool Application::Init()
 {
@@ -51,8 +44,6 @@ void Application::Shutdown()
 
 int Application::Run()
 {	
-	std::cout << "Sizeof: " << sizeof(double) << std::endl;
-	std::cout << "Sizeoflong: " << sizeof(long double) << std::endl;
 	double currentTime = 0.0;
 	double lastTime = 0.0;
 	int frames = 0;
@@ -94,4 +85,5 @@ void Application::RegisterTests()
 	m_Menu->RegisterTest<MatricesTest>();
 	m_Menu->RegisterTest<CameraTest>();
 	m_Menu->RegisterTest<MandelbrotTest>();
+	m_Menu->RegisterTest<LightingTest>();
 } 
